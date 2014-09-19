@@ -17,7 +17,7 @@ makeCacheMatrix <- function (x = matrix())
 {
         inverse <- NULL
         
-        #set the matrix passed as argument.
+        #set the matrix passed as argument to global environment and inverse matrix to NULL.
         set <- function(y)
         {
                 x <<- y
@@ -33,10 +33,10 @@ makeCacheMatrix <- function (x = matrix())
                 inverse <<- inv
         }
         
-        #get inverse set above.
+        #gets inverse matrix set above.
         getinverse <- function() inverse
         
-        
+        #returns set(), get(), setinverse(), getinverse() as a list.
         list(set = set, get = get, 
              setinverse = setinverse, 
              getinverse =getinverse)
